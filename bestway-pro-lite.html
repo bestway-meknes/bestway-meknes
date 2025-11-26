@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Way Meknès - Chicken, Pizza, Tacos & More</title>
+
+  <meta name="description" content="Best Way - Fast food à Meknès Mansour : poulet croustillant, pizza, tacos, burgers, salades, plats, jus et livraison rapide.">
+  <meta name="robots" content="index, follow">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandRed: '#e60000',
+            brandYellow: '#ffcc00',
+            brandBlack: '#050505',
+            brandDark: '#141414'
+          },
+          fontFamily: {
+            heading: ['Oswald', 'sans-serif'],
+            body: ['Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #e60000; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ffcc00; }
+
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.95)),
+      url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-float { animation: pulse-green 2s infinite; }
+  </style>
+</head>
+<body class="bg-brandBlack text-white selection:bg-brandRed selection:text-white">
+
+<!-- HEADER SIMPLE PRO -->
+<header class="fixed inset-x-0 top-0 z-40 bg-black/80 backdrop-blur border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-3">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brandRed to-brandYellow flex items-center justify-center border border-white/20 shadow-lg shadow-brandRed/30">
+          <i class="fas fa-drumstick-bite text-white text-lg"></i>
+        </div>
+        <div class="leading-tight">
+          <p class="font-heading text-base md:text-lg uppercase tracking-[0.18em]">Best Way</p>
+          <p class="text-[11px] text-gray-300 tracking-wide">Chicken & Pizza - Meknès Mansour</p>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-xs font-medium">
+        <a href="#menu" class="hover:text-brandYellow transition">Menu</a>
+        <a href="#about" class="hover:text-brandYellow transition">À propos</a>
+        <a href="#contact" class="hover:text-brandYellow transition">Contact</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-3 text-xs">
+        <a href="tel:0535515158" class="flex items-center gap-2 text-gray-200 hover:text-brandYellow transition">
+          <i class="fa-solid fa-phone-volume text-brandYellow"></i> 05 35 51 51 58
+        </a>
+        <a href="https://wa.me/212550011777" target="_blank"
+           class="bg-green-500 hover:bg-green-400 text:black font-semibold px-4 py-2 rounded-full flex items-center gap-2 shadow-md shadow-green-500/40">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Commander
+        </a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden pb-3 border-t border-white/10 text-sm">
+      <div class="pt-2 space-y-2">
+        <a href="#menu" class="block">Menu</a>
+        <a href="#about" class="block">À propos</a>
+        <a href="#contact" class="block">Contact</a>
+        <a href="https://wa.me/212550011777" target="_blank" class="inline-flex items-center gap-2 text-green-400 pt-2">
+          <i class="fa-brands fa-whatsapp"></i> Commander WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="pt-20">
+
+  <!-- HERO -->
+  <section class="hero-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 flex flex-col md:flex-row items-center gap-10">
+      <div class="flex-1 reveal">
+        <p class="text-brandYellow text-[11px] font-semibold tracking-[0.25em] uppercase mb-3">
+          Fast Food &ndash; Meknès Mansour
+        </p>
+        <h1 class="font-heading text-3xl md:text-5xl leading-tight uppercase mb-4">
+          Chicken, Pizza, <span class="text-brandYellow">Tacos</span><br>&amp; plus encore
+        </h1>
+        <p class="text-gray-200 text-sm md:text-base max-w-xl mb-5">
+          Best Way هو الوجهة ديالك للماكلة السريعة و اللذيذة: دجاج مقرمش، بيتزا، تاكوس، برغر، سلطات و عصائر.
+          توصيل مجاني داخل مكناس ابتداءً من 20 درهم.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-5">
+          <a href="#menu"
+             class="bg-brandYellow text-brandBlack font-heading px-7 py-2.5 rounded-full uppercase tracking-wide text-xs md:text-sm hover:bg:white transition shadow-lg shadow-brandYellow/40">
+            Voir le menu
+          </a>
+          <a href="https://wa.me/212550011777" target="_blank"
+             class="border border-white/50 text-xs md:text-sm px-5 py-2.5 rounded-full flex items-center gap-2 hover:border-brandYellow hover:text-brandYellow transition">
+            <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> Commander WhatsApp
+          </a>
+        </div>
+        <div class="flex flex-wrap items-center gap-5 text-[11px] text-gray-300">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-clock text-brandYellow"></i> 12h00 &ndash; 00h00
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-motorcycle text-brandYellow"></i> Livraison gratuite à Meknès
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 reveal">
+        <div class="bg-brandDark/90 border border-white/10 rounded-3xl p-4 shadow-2xl shadow-black/70">
+          <div class="relative overflow-hidden rounded-2xl mb-4">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=1200&auto=format&fit=crop"
+                 alt="Best Way Chicken & Pizza"
+                 class="w-full h-56 md:h-72 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end">
+              <div class="p-3">
+                <p class="font-heading text-lg text-white uppercase tracking-wide">Best Way &ndash; Chicken &amp; Pizza</p>
+                <p class="text-[11px] text-gray-200">Av. Mohamed VI, Mansour, Meknès</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-3 text-[11px]">
+            <div class="bg-black/70 rounded-xl p-3 border border:white/10">
+              <div class="flex items-center gap-2 text-brandYellow mb-1">
+                <i class="fa-solid fa-fire text-xs"></i><span class="font-semibold">Chicken</span>
+              </div>
+              <p class="text-gray-300">Tenders, strips, cuisto &amp; plats croustillants.</p>
+            </div>
+            <div class="bg:black/70 rounded-xl p-3 border border-white/10">
+              <div class="flex items-center gap-2 text-brandYellow mb-1">
+                <i class="fa-solid fa-pizza-slice text-xs"></i><span class="font-semibold">Pizza</span>
+              </div>
+              <p class="text-gray-300">Classiques, Fruits de Mer, Royale...</p>
+            </div>
+            <div class="bg-black/70 rounded-xl p-3 border border-white/10">
+              <div class="flex items-center gap-2 text-brandYellow mb-1">
+                <i class="fa-solid fa-burger text-xs"></i><span class="font-semibold">Tacos &amp; Burgers</span>
+              </div>
+              <p class="text-gray-300">Tacos L/XXL, burgers &amp; panini.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="py-16 bg-brandDark">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Title -->
+      <div class="text-center mb-8 reveal">
+        <h2 class="text-brandYellow font-heading text-sm tracking-[0.3em] uppercase mb-2">
+          Menu Best Way
+        </h2>
+        <h3 class="text-3xl md:text-4xl font-bold text-white uppercase">
+          Chicken • Pizza • Tacos &amp; More
+        </h3>
+        <div class="w-20 h-[2px] bg-brandRed mx-auto mt-3"></div>
+        <p class="mt-3 text-gray-300 text-xs md:text-sm">
+          Livraison gratuite à Meknès &ndash; à partir de 20 DH
+        </p>
+      </div>
+
+      <!-- OFFICIAL MENU IMAGES -->
+      <div class="mb-10 reveal">
+        <h4 class="font-heading text-lg md:text-xl text:white text-center mb-3">
+          Menu officiel &ndash; كما هو في المطعم
+        </h4>
+        <p class="text-center text-[11px] md:text-xs text-gray-300 mb-4">
+          هاد الصور هي المينو الرسمي ديال Best Way. كبّر أي صورة باش تشوف جميع التفاصيل و الأثمنة.
+        </p>
+        <div class="space-y-3 max-w-3xl mx-auto">
+          <a href="menu-page1.jpg" target="_blank" class="block group">
+            <img src="menu-page1.jpg" alt="Menu Best Way - Page 1"
+                 class="w-full rounded-2xl border border-gray-700 group-hover:border-brandYellow transition object-contain">
+          </a>
+          <a href="menu-page2.jpg" target="_blank" class="block group">
+            <img src="menu-page2.jpg" alt="Menu Best Way - Page 2"
+                 class="w-full rounded-2xl border border-gray-700 group-hover:border-brandYellow transition object-contain">
+          </a>
+          <a href="menu-page3.jpg" target="_blank" class="block group">
+            <img src="menu-page3.jpg" alt="Menu Best Way - Page 3"
+                 class="w-full rounded-2xl border border-gray-700 group-hover:border-brandYellow transition object-contain">
+          </a>
+          <a href="menu-page4.jpg" target="_blank" class="block group">
+            <img src="menu-page4.jpg" alt="Menu Best Way - Page 4"
+                 class="w-full rounded-2xl border border-gray-700 group-hover:border-brandYellow transition object-contain">
+          </a>
+        </div>
+        <div class="text-center mt-4 flex flex-col md:flex-row items-center justify-center gap-3 text-xs">
+          <a href="menu-page1.jpg" target="_blank"
+             class="inline-block bg-brandYellow text-brandBlack font-heading px-7 py-2 rounded-full uppercase tracking-wider hover:bg:white transition shadow-md shadow-brandYellow/40">
+            فتح المينو في شاشة كاملة
+          </a>
+          <a href="https://wa.me/212550011777?text=Salam%2C%20bghit%20n9addem%20talab%20mn%20lmenu%20officiel%20Best%20Way."
+             target="_blank"
+             class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-green-500 hover:bg-green-400 text-black font-semibold shadow-md shadow-green-500/40">
+            <i class="fa-brands fa-whatsapp text-base"></i> طلب عبر WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- TEXT MENU WITH THUMBNAILS -->
+      <div class="border-t border-white/10 pt-8 mt-4">
+        <div class="flex items-center justify-center mb-6 gap-3 text-xs">
+          <button id="btn-menu-fr"
+                  class="px-4 py-2 rounded-full font-semibold bg-brandYellow text-brandBlack font-heading uppercase tracking-wide">
+            Menu Français
+          </button>
+          <button id="btn-menu-ar"
+                  class="px-4 py-2 rounded-full font-semibold bg-transparent text-gray-300 border border-gray-600 font-heading tracking-wide">
+            القائمة العربية
+          </button>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- FR LIST -->
+          <div id="menu-fr" class="lg:col-span-2 space-y-6 text-xs md:text-sm text-gray-200">
+
+            <!-- PIZZAS -->
+            <div class="bg-brandDark rounded-2xl border border-gray-800 shadow-lg shadow-black/50 p-5 md:p-6 reveal">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-heading text-xl text-brandYellow tracking-wide">Pizzas</h4>
+                <span class="text-brandRed font-bold text-[10px] uppercase">Selon taille</span>
+              </div>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1548369937-47519962c11a?q=80&w=400&auto=format&fit=crop"
+                       alt="Pizza Margharita" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Pizza Margharita</p>
+                    <p class="text-[11px] text-gray-300">Mozzarella, emmental, origan, olives.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Salam%2C%20bghit%20Pizza%20Margharita."
+                     target="_blank"
+                     class="bg-brandYellow text-black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1544022613-8c07aaca2e68?q=80&w=400&auto=format&fit=crop"
+                       alt="Pizza Fruits de Mer" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Pizza Fruits de Mer</p>
+                    <p class="text-[11px] text-gray-300">Fruits de mer, fromage, champignon, olives.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Salam%2C%20bghit%20Pizza%20Fruits%20de%20Mer."
+                     target="_blank"
+                     class="bg-brandYellow text-black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=400&auto=format&fit=crop"
+                       alt="Pizza Royale" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Pizza Royale</p>
+                    <p class="text-[11px] text-gray-300">Jambon de dinde, viande hachée, merguez, poulet.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Salam%2C%20bghit%20Pizza%20Royale."
+                     target="_blank"
+                     class="bg-brandYellow text-black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- SALADES & BURGERS -->
+            <div class="bg-brandDark rounded-2xl border border-gray-800 shadow-lg shadow-black/50 p-5 md:p-6 reveal">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-heading text-xl text-brandYellow tracking-wide">Salades &amp; Burgers</h4>
+              </div>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop"
+                       alt="Salade Best Way" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Salade Best Way</p>
+                    <p class="text-[11px] text-gray-300">Pâtes, légumes, fromage, poulet crispy.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Salade%20Best%20Way."
+                     target="_blank"
+                     class="bg-brandYellow text-black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=400&auto=format&fit=crop"
+                       alt="Burger Big Way" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Burger Big Way</p>
+                    <p class="text-[11px] text-gray-300">Burger généreux avec frites.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Burger%20Big%20Way."
+                     target="_blank"
+                     class="bg-brandYellow text-black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- TACOS & PANINI -->
+            <div class="bg-brandDark rounded-2xl border border-gray-800 shadow-lg shadow-black/50 p-5 md:p-6 reveal">
+              <div class="flex items-center justify-between mb-3">
+                <h4 class="font-heading text-xl text-brandYellow tracking-wide">Tacos &amp; Panini</h4>
+              </div>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1601924638867-3ec3af874f47?q=80&w=400&auto=format&fit=crop"
+                       alt="Tacos Chicken" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Tacos Chicken</p>
+                    <p class="text:[11px] text-gray-300">Poulet crispy, sauce fromagère, frites.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Tacos%20Chicken."
+                     target="_blank"
+                     class="bg-brandYellow text:black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+                <div class="flex items-center gap-3 bg-black/50 p-2.5 rounded-xl border border-white/5">
+                  <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?q=80&w=400&auto=format&fit=crop"
+                       alt="Tacos Mixte" class="w-12 h-12 rounded-lg object-cover hidden sm:block">
+                  <div class="flex-1">
+                    <p class="font-semibold text-white text-xs md:text-sm">Tacos Mixte</p>
+                    <p class="text-[11px] text-gray-300">Mélange viandes au choix.</p>
+                  </div>
+                  <a href="https://wa.me/212550011777?text=Tacos%20Mixte."
+                     target="_blank"
+                     class="bg-brandYellow text-black text-[10px] font-bold px-3 py-1.5 rounded-full hover:bg:white transition">
+                    Commander
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- AR LIST -->
+          <div id="menu-ar" class="lg:col-span-2 space-y-4 text-xs md:text-sm text-gray-200 hidden" dir="rtl">
+            <div class="bg-brandDark rounded-2xl border border-gray-800 shadow-lg shadow-black/50 p-5 reveal">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-brandRed font-bold text-[10px]">البيتزا</span>
+                <h4 class="font-heading text-lg text-brandYellow tracking-wide">أنواع البيتزا</h4>
+              </div>
+              <ul class="space-y-1.5">
+                <li>- مارغاريتا &ndash; موزاريلا، إيمونتال، أوريغانو، زيتون.</li>
+                <li>- ثمار البحر &ndash; فواكه البحر، جبن، فطر، زيتون.</li>
+                <li>- رويال &ndash; ديك رومي، لحم مفروم، مرغيز، دجاج.</li>
+              </ul>
+            </div>
+            <div class="bg-brandDark rounded-2xl border border-gray-800 shadow-lg shadow-black/50 p-5 reveal">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-brandRed font-bold text-[10px]">السلاطات و البرغر</span>
+                <h4 class="font-heading text-lg text-brandYellow tracking-wide">السلاطات و البرغر</h4>
+              </div>
+              <ul class="space-y-1.5">
+                <li>- سلطة بست واي &ndash; مكرونة، خضرة، جبن، دجاج مقرمش.</li>
+                <li>- برغر Big Way &ndash; برغر كبير مع بطاطس.</li>
+              </ul>
+            </div>
+            <div class="bg-brandDark rounded-2xl border border-gray-800 shadow-lg shadow-black/50 p-5 reveal">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-brandRed font-bold text-[10px]">التاكوس</span>
+                <h4 class="font-heading text-lg text-brandYellow tracking-wide">التاكوس</h4>
+              </div>
+              <ul class="space-y-1.5">
+                <li>- تاكوس تشيكن &ndash; دجاج مقرمش، صوص جبن، بطاطس.</li>
+                <li>- تاكوس ميكست &ndash; خليط ديال اللحوم.</li>
+              </ul>
+              <div class="mt-3">
+                <a href="https://wa.me/212550011777?text=Salam%2C%20bghit%20n9addem%20talab%20mn%20lmenu%20b%20l3arabiya."
+                   target="_blank"
+                   class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brandYellow text-brandBlack font-semibold text-[11px] hover:bg:white transition">
+                  <i class="fa-brands fa-whatsapp text-sm"></i> طلب عبر WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- QR CARD -->
+          <div class="space-y-4 reveal">
+            <div class="bg-brandDark rounded-2xl border border-brandRed/50 shadow-lg shadow-brandRed/30 p-5 text-center flex flex-col items-center">
+              <h4 class="font-heading text-base md:text-lg text-brandYellow tracking-wide mb-2">
+                Scan &amp; découvre tout le menu
+              </h4>
+              <p class="text-[11px] text-gray-300 mb-3">
+                اسكاني الكود باش تشوف المينو كامل فالتليفون ديالك.
+              </p>
+              <div class="bg:white p-2.5 rounded-xl inline-block mb-3">
+                <img src="menu-qr.jpg" alt="QR Code Menu Best Way" class="w-36 h-36 object-contain">
+              </div>
+              <a href="https://wa.me/212550011777" target="_blank"
+                 class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-green-500 hover:bg-green-400 text-black text-xs font-semibold shadow-md shadow-green-500/40">
+                <i class="fa-brands fa-whatsapp text-base"></i> Commander sur WhatsApp
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT / CONTACT -->
+  <section id="about" class="py-16 bg-brandBlack">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-start">
+      <div class="reveal">
+        <h2 class="font-heading text-2xl md:text-3xl text-white uppercase mb-3">
+          Best Way &ndash; Fast Food à Meknès
+        </h2>
+        <p class="text-sm text-gray-200 mb-3">
+          Best Way هو مطعم فاست فود فحي منصور، مكناس، كيجمع بين الذوق و السرعة.
+          نقدمو بيتزا، دجاج مقرمش، تاكوس، برغر، سلطات و عصائر طازجة.
+        </p>
+        <p class="text-sm text-gray-200 mb-4">
+          التوصيل مجاني داخل مكناس ابتداءً من 20 درهم، للبيوت و المكاتب، مع احترام
+          معايير النظافة و جودة الخدمة.
+        </p>
+        <ul class="text-sm text-gray-200 space-y-1.5">
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-brandYellow mt-0.5 text-xs"></i>
+            <span>مكونات طازجة و وصفات خاصة بالمطعم.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-brandYellow mt-0.5 text-xs"></i>
+            <span>خدمة توصيل سريعة داخل مكناس.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-brandYellow mt-0.5 text-xs"></i>
+            <span>جو عائلي و مناسب للأصدقاء.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="contact" class="space-y-4 text-sm text-gray-200 reveal">
+        <h3 class="font-heading text-xl text-white uppercase mb-2">Contact &amp; livraison</h3>
+        <div class="space-y-2">
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-location-dot text-brandYellow mt-0.5"></i>
+            <p>Av. Mohamed VI, Imm D32 Mansour, Meknès, Maroc</p>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-phone text-brandYellow mt-0.5"></i>
+            <p>
+              Fix :
+              <a href="tel:0535515158" class="hover:text-brandYellow">05 35 51 51 58</a><br>
+              Fix :
+              <a href="tel:0550011777" class="hover:text-brandYellow">05 50 01 17 77</a>
+            </p>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-brands fa-whatsapp text-green-400 mt-0.5"></i>
+            <p>
+              <a href="https://wa.me/212550011777" target="_blank" class="hover:text-brandYellow">
+                +212 550 01 17 77
+              </a>
+            </p>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-regular fa-clock text-brandYellow mt-0.5"></i>
+            <p>Ouvert tous les jours : 12h00 &ndash; 00h00</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-3 text-xs pt-1">
+          <a href="tel:0535515158"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 hover:border-brandYellow hover:text-brandYellow transition">
+            <i class="fa-solid fa-phone"></i> Appeler maintenant
+          </a>
+          <a href="https://wa.me/212550011777" target="_blank"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500 hover:bg-green-400 text-black font-semibold shadow-md shadow-green-500/40">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-black border-t border-white/10 py-5 text-[11px] text-gray-400">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2">
+    <p>© <span id="year"></span> Best Way &ndash; Chicken &amp; Pizza, Meknès.</p>
+    <p>Site vitrine pour présentation du menu et des services.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/212550011777" target="_blank"
+   class="whatsapp-float fixed bottom-4 right-4 z-40 w-11 h-11 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/40">
+  <i class="fa-brands fa-whatsapp text-xl text-white"></i>
+</a>
+
+<script>
+  // mobile menu
+  document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // reveal on scroll
+  function handleReveal() {
+    const els = document.querySelectorAll('.reveal');
+    const h = window.innerHeight;
+    els.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < h - 80) el.classList.add('show');
+    });
+  }
+  window.addEventListener('scroll', handleReveal);
+  window.addEventListener('load', handleReveal);
+
+  // language switch
+  function switchMenu(lang) {
+    const fr = document.getElementById('menu-fr');
+    const ar = document.getElementById('menu-ar');
+    const btnFr = document.getElementById('btn-menu-fr');
+    const btnAr = document.getElementById('btn-menu-ar');
+
+    if (lang === 'fr') {
+      fr.classList.remove('hidden');
+      ar.classList.add('hidden');
+      btnFr.classList.add('bg-brandYellow','text-brandBlack');
+      btnFr.classList.remove('bg-transparent','text-gray-300','border','border-gray-600');
+      btnAr.classList.remove('bg-brandYellow','text-brandBlack');
+      btnAr.classList.add('bg-transparent','text-gray-300','border','border-gray-600');
+    } else {
+      ar.classList.remove('hidden');
+      fr.classList.add('hidden');
+      btnAr.classList.add('bg-brandYellow','text-brandBlack');
+      btnAr.classList.remove('bg-transparent','text-gray-300','border','border-gray-600');
+      btnFr.classList.remove('bg-brandYellow','text-brandBlack');
+      btnFr.classList.add('bg-transparent','text-gray-300','border','border-gray-600');
+    }
+  }
+
+  document.getElementById('btn-menu-fr').addEventListener('click', () => switchMenu('fr'));
+  document.getElementById('btn-menu-ar').addEventListener('click', () => switchMenu('ar'));
+</script>
+
+</body>
+</html>
